@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+<div class="submit">
+  <div class="submit-header">
+    <h4>Submit Confession!</h4>
+  </div>
+  <hr>
+  <div class="submit-icon">
+    <i class="fas fa-key fa-6x"></i>
+    <h5 class="">Don't keep your secrets, share them anonymously!</h5>
+  </div>
+  <div class="submit-form">
+    <div class="form-left">
+    <form action="/submit" method="POST">
+      <div class="form-dropdown">
+        <p>Please select a category</p>
+        <select id="types" name="type">
+          <option class="submit-option"  value="dream">A Dream</option>
+          <option class="submit-option" value="fantasy">A Fantasy</option>
+          <option class="submit-option" value="guilt">A Guilt</option>
+          <option class="submit-option" value="lie">A Lie</option>
+          <option class="submit-option" value="truth">A Truth</option>
+          <option class="submit-option" value="experience">A Wild Experience of a Lifetime</option>
+          <option class="submit-option" value="other">Others</option>
+        </select>
+      </div>
+      <div class="">
+        <textarea type="text" class="submit-textarea" name="secret" placeholder="What's your secret?" rows="4" cols="60" autocomplete="off"></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark submit-button">CONFESS</button>
+    </form>
+    </div>
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>

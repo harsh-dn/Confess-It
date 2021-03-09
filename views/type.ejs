@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<div class="type-page">
+  <h4>All of the <%= typeword %><img class="type-image" src="<%= image %>" alt=""></h4>
+  <hr>
+</div>
+
+<div class="row">
+<% message.forEach(function(message){ %>
+  <div class="col-sm-3 type-list">
+  <div class="card card-1 bg-light mb-3" style="">
+   <div class="card-header" ><%= type %></div>
+    <div class="card-body">
+     <p class="card-text"><%= message.text %></p>
+   </div>
+  </div>
+  </div>
+<% }) %>
+</div>
+
+
+
+
+
+
+
+
+
+
+<%- include('partials/footer') %>
