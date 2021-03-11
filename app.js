@@ -28,7 +28,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb+srv://admin-harsh:Test123@cluster0.b8xbg.mongodb.net/confessionDB", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
 mongoose.set('useCreateIndex', true);
 
 const userSchema = new mongoose.Schema({
@@ -79,7 +79,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/secrets",
+  callbackURL: "https://blooming-inlet-57651.herokuapp.com/auth/google/secrets",
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
   },
   function(accessToken, refreshToken, profile, cb) {
